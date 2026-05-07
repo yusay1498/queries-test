@@ -21,6 +21,15 @@
   padding: var(--space-md);
 }
 
+/* コンテナ幅ラベル */
+.cq-resize-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  margin-block-end: var(--space-sm);
+  white-space: nowrap;
+}
+
 /* ==========================================================================
    カードコンテナ（container-type を設定）
    ========================================================================== */
@@ -107,4 +116,14 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-md);
+}
+
+/* 狭いコンテナ: grid の 1fr 側に収まるため幅指定は不要だが、
+   ラベルで視覚的に分かるようボーダーカラーを変える */
+.cq-compare__item--narrow {
+  border-color: var(--color-text-muted);
+}
+
+.cq-compare__item--wide {
+  border-color: var(--color-primary);
 }
