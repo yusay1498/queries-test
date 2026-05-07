@@ -1,1 +1,103 @@
-<!-- メディアクエリ用のhtml -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>メディアクエリ デモ | Queries Demo</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media-query.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="header__logo">Queries Demo</a>
+        <nav>
+          <ul class="nav__list">
+            <li><a href="index.html" class="nav__link">ホーム</a></li>
+            <li><a href="media-query.html" class="nav__link nav__link--active" aria-current="page">メディアクエリ</a></li>
+            <li><a href="container-query.html" class="nav__link">コンテナクエリ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+      <div class="container">
+
+        <!-- 説明 -->
+        <section class="section">
+          <h1>メディアクエリ デモ</h1>
+          <p>メディアクエリは<strong>ビューポート（画面）のサイズ</strong>を基準にスタイルを切り替えます。ブラウザのウィンドウ幅を変えて動作を確認してください。</p>
+        </section>
+
+        <!-- デモ① カードグリッド -->
+        <section class="section">
+          <h2 class="section__title">デモ① カードグリッド</h2>
+          <p class="demo-description">画面幅に応じて1カラム → 2カラム → 3カラムと変化します。</p>
+          <div class="mq-card-grid">
+            <div class="card">
+              <h3 class="card__title">Card 1</h3>
+              <p class="card__body">メディアクエリによってレイアウトが変わるカードです。</p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">Card 2</h3>
+              <p class="card__body">メディアクエリによってレイアウトが変わるカードです。</p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">Card 3</h3>
+              <p class="card__body">メディアクエリによってレイアウトが変わるカードです。</p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">Card 4</h3>
+              <p class="card__body">メディアクエリによってレイアウトが変わるカードです。</p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">Card 5</h3>
+              <p class="card__body">メディアクエリによってレイアウトが変わるカードです。</p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">Card 6</h3>
+              <p class="card__body">メディアクエリによってレイアウトが変わるカードです。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- デモ② ハンバーガーメニュー -->
+        <section class="section">
+          <h2 class="section__title">デモ② ハンバーガーメニュー</h2>
+          <p class="demo-description">画面幅が狭くなるとナビゲーションがハンバーガーメニューに切り替わります。</p>
+          <div class="mq-nav-demo">
+            <div class="mq-nav-demo__bar">
+              <span class="mq-nav-demo__logo">Demo Site</span>
+              <button type="button" class="mq-nav-demo__toggle" aria-expanded="false" aria-controls="mq-nav-demo-menu" aria-label="メニュー">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </button>
+              <ul class="mq-nav-demo__menu" id="mq-nav-demo-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><button type="button">About</button></li>
+                <li><button type="button">Works</button></li>
+                <li><button type="button">Contact</button></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>Media Query vs Container Query Demo</p>
+      </div>
+    </footer>
+
+    <script src="js/media-query.js"></script>
+  </body>
+</html>

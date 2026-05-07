@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Demo① カードグリッド
+   デフォルト: 1カラム
+   768px以上: 2カラム
+   1024px以上: 3カラム
+   ========================================================================== */
+
+.demo-description {
+  margin-block-end: var(--space-md);
+  color: var(--color-text-muted);
+}
+
+.mq-card-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* デフォルト: 1カラム */
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .mq-card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 768px以上: 2カラム */
+  }
+}
+
+@media (min-width: 1024px) {
+  .mq-card-grid {
+    grid-template-columns: repeat(3, 1fr); /* 1024px以上: 3カラム */
+  }
+}
+
+/* ==========================================================================
+   Demo② ハンバーガーメニュー
+   デフォルト（狭い）: ハンバーガーボタンを表示、メニューは非表示
+   600px以上: メニューを横並びで常時表示
+   ========================================================================== */
+
+.mq-nav-demo {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.mq-nav-demo__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-primary);
+  color: #fff;
+  position: relative;
+}
+
+.mq-nav-demo__logo {
+  font-weight: var(--font-weight-bold);
+}
+
+/* ハンバーガーボタン */
+.mq-nav-demo__toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mq-nav-demo__toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.mq-nav-demo__toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+
+/* メニュー: デフォルトは非表示 */
+.mq-nav-demo__menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  flex-direction: column;
+}
+
+.mq-nav-demo__menu--open {
+  display: flex;
+}
+
+.mq-nav-demo__menu li a,
+.mq-nav-demo__menu li button {
+  display: block;
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  color: #fff;
+  text-decoration: none;
+  text-align: left;
+  background: none;
+  border: none;
+  border-top: 1px solid rgb(255 255 255 / 0.2);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+}
+
+.mq-nav-demo__menu li a:hover,
+.mq-nav-demo__menu li a:focus-visible,
+.mq-nav-demo__menu li button:hover,
+.mq-nav-demo__menu li button:focus-visible {
+  background-color: var(--color-primary-hover);
+  text-decoration: none;
+  outline: none;
+}
+
+@media (min-width: 600px) {
+  /* 600px以上: ハンバーガーボタンを隠す */
+  .mq-nav-demo__toggle {
+    display: none;
+  }
+
+  /* メニューを横並びで常時表示 */
+  .mq-nav-demo__menu {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+  }
+
+  .mq-nav-demo__menu li a,
+  .mq-nav-demo__menu li button {
+    border-top: none;
+    border-left: 1px solid rgb(255 255 255 / 0.2);
+  }
+}
