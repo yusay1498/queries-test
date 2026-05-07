@@ -1,1 +1,47 @@
-<!-- リポジトリ全体管理用 -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Query vs Container Query</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="header__logo">Queries Demo</a>
+        <nav>
+          <ul class="nav__list">
+            <li><a href="index.html" class="nav__link nav__link--active">ホーム</a></li>
+            <li><a href="media-query.html" class="nav__link">メディアクエリ</a></li>
+            <li><a href="container-query.html" class="nav__link">コンテナクエリ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+      <div class="container">
+        <section class="section">
+          <h1>Media Query vs Container Query</h1>
+          <p>メディアクエリとコンテナクエリの動作を確認できるデモサイトです。</p>
+          <ul>
+            <li><a href="media-query.html">メディアクエリ デモ</a></li>
+            <li><a href="container-query.html">コンテナクエリ デモ</a></li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>Media Query vs Container Query Demo</p>
+      </div>
+    </footer>
+  </body>
+</html>
