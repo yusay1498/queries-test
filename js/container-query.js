@@ -5,17 +5,21 @@ if (resizable) {
   label.className = 'cq-resize-label';
   resizable.prepend(label);
 
+  let debounceTimer;
   const updateLabel = () => {
-    const width = Math.round(resizable.offsetWidth);
-    label.textContent = `コンテナ幅: ${width}px`;
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      const width = Math.round(resizable.offsetWidth);
+      label.textContent = `コンテナ幅: ${width}px`;
+    }, 100);
   };
 
-  updateLabel();
+  label.textContent = `コンテナ幅: ${Math.round(resizable.offsetWidth)}px`;
 
-  if (typeof window !== 'undefined' && 'ResizeObserver' in window) {
-    const observer = new window.ResizeObserver(updateLabel);
+  if (window.ResizeObserver) {
+    const observer = new ResizeObserver(updateLabel);
     observer.observe(resizable);
-  } else if (typeof window !== 'undefined') {
+  } else {
     window.addEventListener('resize', updateLabel);
   }
 }
