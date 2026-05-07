@@ -1,0 +1,129 @@
+/* ==========================================================================
+   共通
+   ========================================================================== */
+
+.demo-description {
+  margin-block-end: var(--space-md);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Demo① リサイズ可能なコンテナ
+   ========================================================================== */
+
+.cq-resizable {
+  resize: horizontal;
+  overflow: auto;
+  min-width: 200px;
+  max-width: 100%;
+  border: 2px dashed var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+/* コンテナ幅ラベル */
+.cq-resize-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  margin-block-end: var(--space-sm);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   カードコンテナ（container-type を設定）
+   ========================================================================== */
+
+.cq-card-container {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* ==========================================================================
+   カード: デフォルト（縦並び）
+   ========================================================================== */
+
+.cq-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.cq-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-primary);
+  opacity: 0.2;
+  flex-shrink: 0;
+}
+
+.cq-card__body {
+  padding: var(--space-md);
+}
+
+.cq-card__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  margin-block-end: var(--space-xs);
+}
+
+.cq-card__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   カード: コンテナが 480px 以上 → 横並び
+   ========================================================================== */
+
+@container (min-width: 480px) {
+  .cq-card {
+    flex-direction: row;
+  }
+
+  .cq-card__image {
+    width: 160px;
+    aspect-ratio: 1;
+  }
+}
+
+/* ==========================================================================
+   Demo② 比較レイアウト
+   ========================================================================== */
+
+.cq-compare {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.cq-compare__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  margin-block-end: var(--space-sm);
+}
+
+.cq-compare__item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+/* 狭いコンテナ: grid の 1fr 側に収まるため幅指定は不要だが、
+   ラベルで視覚的に分かるようボーダーカラーを変える */
+.cq-compare__item--narrow {
+  border-color: var(--color-text-muted);
+}
+
+.cq-compare__item--wide {
+  border-color: var(--color-primary);
+}
