@@ -69,6 +69,11 @@
   cursor: pointer;
 }
 
+.mq-nav-demo__toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
 .mq-nav-demo__toggle span {
   display: block;
   width: 100%;
