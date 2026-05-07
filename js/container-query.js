@@ -13,6 +13,10 @@ if (resizable) {
 
   updateLabel();
 
-  const observer = new ResizeObserver(updateLabel);
-  observer.observe(resizable);
+  if (typeof window !== 'undefined' && 'ResizeObserver' in window) {
+    const observer = new window.ResizeObserver(updateLabel);
+    observer.observe(resizable);
+  } else if (typeof window !== 'undefined') {
+    window.addEventListener('resize', updateLabel);
+  }
 }
