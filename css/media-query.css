@@ -98,18 +98,28 @@
   display: flex;
 }
 
-.mq-nav-demo__menu li a {
+.mq-nav-demo__menu li a,
+.mq-nav-demo__menu li button {
   display: block;
+  width: 100%;
   padding: var(--space-sm) var(--space-md);
   color: #fff;
   text-decoration: none;
+  text-align: left;
+  background: none;
+  border: none;
   border-top: 1px solid rgb(255 255 255 / 0.2);
+  cursor: pointer;
+  font-size: var(--font-size-base);
 }
 
 .mq-nav-demo__menu li a:hover,
-.mq-nav-demo__menu li a:focus-visible {
+.mq-nav-demo__menu li a:focus-visible,
+.mq-nav-demo__menu li button:hover,
+.mq-nav-demo__menu li button:focus-visible {
   background-color: var(--color-primary-hover);
   text-decoration: none;
+  outline: none;
 }
 
 @media (min-width: 600px) {
@@ -125,7 +135,8 @@
     width: auto;
   }
 
-  .mq-nav-demo__menu li a {
+  .mq-nav-demo__menu li a,
+  .mq-nav-demo__menu li button {
     border-top: none;
     border-left: 1px solid rgb(255 255 255 / 0.2);
   }
